@@ -4,39 +4,58 @@ export default class User extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            users: [
-                {
-                    id: 1,
-                    username: 'admin',
-                    email: 'admin@gmail.com',
-                    phone: '0987654321',
-                    password: '1234'
-                },
-                {
-                    id: 2,
-                    username: 'customer',
-                    email: 'customer@gmail.com',
-                    phone: '0986568799',
-                    password: '1234'
-                }
-            ],
-            values: {}
+            users: [],
+            values: {},
+            typeForm: 'create'
         }
     }
-    handleChange = (evt) => {
-        this.setState(prevState => {
-            let obj = {...prevState.values};
-            obj[evt.target.name] = evt.target.value;
-            return { values: obj }
-        })
-        // this.setState({
-        //     values: {...this.state.values, [evt.target.name]: evt.target.value}
-        // });
-        // console.log(this.state.values);
+
+    handleChange = (event) => {
+        // this.setState((prevState) => {
+        //     let obj = {...prevState.values};
+        //     obj[event.target.name] = event.target.value;
+        //     return { values: obj };
+        // }, () => {
+        //     // Xử lý sau khi state được set
+        //     console.log(this.state);
+        // })
+        this.setState((prevState) => ({
+            values: {...prevState.values, [event.target.name]: event.target.value }
+        }));
     }
 
-    handleNew = () => {
-        console.log(this.state.values);
+    btnAddNew = () => {
+        let newUser = this.state.values;
+        if (newUser.password !== newUser.confirm) {
+            alert('Mật khẩu không khớp');
+            return;
+        }
+        newUser.id = this.state.users.length + 1;
+        this.setState(prevState => ({
+            users: [...prevState.users, newUser],
+            values: {}
+        }));
+    }
+
+    btnEdit = (userEdit) => {
+        this.setState({
+            values: userEdit
+        });
+    }
+
+    btnSave = () => {
+        let _userInit = this.state.values;
+        this.setState(prevState => ({
+            users: prevState.users.map(u => {
+                if (u.id == _userInit.id) {
+                    u.username = _userInit.username;
+                    u.email = _userInit.email;
+                    u.phone = _userInit.phone;
+                    u.password = _userInit.password;
+                }
+                return u;
+            })
+        }))
     }
 
     render() {
@@ -45,14 +64,15 @@ export default class User extends Component {
                 <form action="">
                     <fieldset>
                         <legend>Thông tin tài khoản</legend>
-                        <p><b>Tên tài khoản</b> <input name="username" onKeyUp={this.handleChange} type="text"/></p>
-                        <p><b>Email</b> <input name="email" onKeyUp={this.handleChange} type="text"/></p>
-                        <p><b>Số điện thoại</b> <input name="phone" onKeyUp={this.handleChange} type="text"/></p>
-                        <p><b>Mật khẩu</b> <input name="password" onKeyUp={this.handleChange} type="text"/></p>
-                        <p><b>Xác nhận mật khẩu</b> <input name="confirm" onKeyUp={this.handleChange} type="text"/></p>
+                        <input onChange={this.handleChange} name="id" value={this.state.values.id || ''} type="hidden"/>
+                        <p><b>Tên tài khoản</b> <input onChange={this.handleChange} name="username" value={this.state.values.username || ''} type="text"/></p>
+                        <p><b>Email</b> <input onChange={this.handleChange} name="email" value={this.state.values.email || ''} type="text"/></p>
+                        <p><b>Số điện thoại</b> <input onChange={this.handleChange} name="phone" value={this.state.values.phone || ''} type="text"/></p>
+                        <p><b>Mật khẩu</b> <input onChange={this.handleChange} name="password" value={this.state.values.password || ''} type="text"/></p>
+                        <p><b>Xác nhận mật khẩu</b> <input onChange={this.handleChange} name="confirm" value={this.state.values.confirm || ''} type="text"/></p>
                         <p>
-                            <button type='button' className="btn btn-success" onClick={this.handleNew}>Tạo mới</button>
-                            <button type='button' className="btn btn-primary">Lưu</button>
+                            <button type='button' onClick={this.btnAddNew} className="btn btn-success">Tạo mới</button>
+                            <button type='button' onClick={this.btnSave} className="btn btn-primary">Lưu</button>
                         </p>
                     </fieldset>
                 </form>
@@ -68,18 +88,20 @@ export default class User extends Component {
                     </thead>
                     <tbody>
                         {
-                            this.state.users.map(u => 
-                                <tr key={u.id}>
-                                    <td>{u.username}</td>
-                                    <td>{u.email}</td>
-                                    <td>{u.phone}</td>
+                            this.state.users.map((user) => {
+                                return <tr key={user.id}>
+                                    <td>{user.username}</td>
+                                    <td>{user.email}</td>
+                                    <td>{user.phone}</td>
                                     <td>
-                                        <button className="btn btn-warning">Sửa</button>
-                                        {/* <button class="btn btn-primary">Đổi mật khẩu</button> */}
+                                        <button onClick={(e) => {
+                                            console.log("Clicked!");
+                                            this.btnEdit(user);
+                                        }} className="btn btn-warning">Sửa</button>
                                         <button className="btn btn-danger">Xóa</button>
                                     </td>
                                 </tr>
-                            )
+                            })
                         }
                     </tbody>
                 </table>
