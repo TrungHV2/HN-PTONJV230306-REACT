@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Home from './Home';
 import Form from './Form';
 import Table from './Table';
+import Modal from './Modal';
 
 function App() {
   const [total, setTotal] = useState(0);
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <div className="App">
+      <Modal />
       <Table />
       <Form />
       {show && <Home />}
