@@ -15,6 +15,9 @@
     box-shadow: 2px 2px 10px rgba(0,0,0,.5);
     padding: 10px;
 }
+.modal-body {
+    padding: 15px;
+}
 .modal-footer {
     text-align: right;
 }
@@ -27,4 +30,19 @@
 }
 .modal.show {
     display: block;
+}
+.form-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+.control-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-control {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 7px 10px;
+    outline: none;
 }

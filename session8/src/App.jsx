@@ -5,17 +5,45 @@ import { useState } from 'react';
 
 function App() {
   const [show, setShow] = useState(false);
+  const [users, setUsers] = useState([
+    {
+      userId: 1,
+      username: 'admin',
+      status: false
+    },
+    {
+      userId: 2,
+      username: 'customer',
+      status: true
+    }
+  ]);
+  const [user, setUser] = useState({});
 
-  const handleClick = () => {
+
+
+  const handleClick = (userEdit) => {
+    setUser(userEdit);
     setShow(true);
   }
   const handleClose = (evt, data) => {
     setShow(data);
   }
+  const handleSave = (evt, data) => {
+    let updated = users.map(u => {
+      if (u.userId === data.userId) {
+        u.username = data.username;
+        u.status = data.status;
+      }
+      return u;
+    })
+    setUsers(updated);
+    setUser(data);
+    console.log(data);
+  }
 
   return (
-    <div className="App">
-      <Modal show={show} onClose={handleClose} />
+    <div className="">
+      <Modal show={show} frmData={user} onClose={handleClose} onSave={handleSave} />
       <h1>AppJS</h1>
 
       <table border="1" width="100%">
@@ -28,14 +56,14 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>U001</td>
-            <td>admin</td>
-            <td>true</td>
+          {users.map(u => <tr key={u.userId}>
+            <td>{u.userId}</td>
+            <td>{u.username}</td>
+            <td>{u.status ? 'Active' : 'Inactive'}</td>
             <td>
-              <button onClick={handleClick}>Sửa</button>
+              <button onClick={e => handleClick(u)}>Sửa</button>
             </td>
-          </tr>
+          </tr>)}
         </tbody>
       </table>
     </div>

@@ -34,7 +34,9 @@ export default class User extends Component {
         this.setState(prevState => ({
             users: [...prevState.users, newUser],
             values: {}
-        }));
+        }), () => {
+            // Các xử lý sau khi set state sau
+        });
     }
 
     btnEdit = (userEdit) => {
