@@ -1,31 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Image, Link, Swiper } from 'react-nivo-slider';
-import 'react-nivo-slider/es/style';
-import 'react-nivo-slider/es/style/default';
 
-import Loadable from 'react-loadable';
-
-// const loadableComponent = Loadable({
-//     loader: () => import('js/main.js'),
-//     load
-// })
-
-export default function Slider() {
-    useEffect(() => {
-        import('js/main.js');
-        return () => {
-
-        }
-    }, [])
+export default function BannerSlider() {
+    const cap1 = useRef();
+    const cap2 = useRef();
     return (
         <>
             {/* Start slider area */}
             <div className="slider-area">
-                {/* <Swiper id="slider">
-                    <Image src="img/slider/1.jpg" />
-                    <Image src="img/slider/2.jpg" />
-                </Swiper> */}
-                <div id="slider" className="nivoSlider">
+                <Swiper
+                prevText={'<'}
+                nextText={'>'}>
+                    <Image src="img/slider/1.jpg" thumb='img/slider/1.jpg' title='#htmlcaption1' />
+                    <Image src="img/slider/2.jpg" thumb='img/slider/2.jpg' title='#htmlcaption2' />
+                </Swiper>
+                {/* <div id="slider" className="nivoSlider">
                     <img
                         style={{ display: "none" }}
                         src="img/slider/1.jpg"
@@ -40,11 +29,8 @@ export default function Slider() {
                         alt=""
                         title="#htmlcaption2"
                     />
-                </div>
-                <div
-                    id="htmlcaption1"
-                    className="pos-slideshow-caption nivo-html-caption nivo-caption"
-                >
+                </div> */}
+                <div id="htmlcaption1" className="pos-slideshow-caption nivo-html-caption nivo-caption">
                     <div className="timing-bar" />
                     <div className="pos-slideshow-info pos-slideshow-info1">
                         <div className="container">
@@ -64,10 +50,7 @@ export default function Slider() {
                         </div>
                     </div>
                 </div>
-                <div
-                    id="htmlcaption2"
-                    className="pos-slideshow-caption nivo-html-caption nivo-caption"
-                >
+                <div id="htmlcaption2" className="pos-slideshow-caption nivo-html-caption nivo-caption">
                     <div className="timing-bar" />
                     <div className="pos-slideshow-info pos-slideshow-info2">
                         <div className="container">

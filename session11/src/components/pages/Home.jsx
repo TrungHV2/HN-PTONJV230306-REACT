@@ -2,21 +2,564 @@ import React from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import Slider from '../layout/BannerSlide';
+import OwlSlide from '../layout/OwlSlide';
 
-export default function Home({ onAddCart }) {
+export default function Home() {
+    const products = [
+        {
+            id: 'SP01',
+            name: 'Faded Short Sleeves T-shirt',
+            image: 'img/product/faded-short-sleeves-tshirt.jpg',
+            price: 16.51
+        },
+        {
+            id: 'SP02',
+            name: 'Blouse',
+            image: 'img/product/blouse.jpg',
+            price: 27.00
+        },
+        {
+            id: 'SP03',
+            name: 'Printed Dress',
+            image: 'img/product/printed-dress1.jpg',
+            price: 26.00
+        },
+        {
+            id: 'SP04',
+            name: 'Printed Dress',
+            image: 'img/product/printed-dress2.jpg',
+            price: 50.00
+        },
+        {
+            id: 'SP05',
+            name: 'Printed Summer Dress',
+            image: 'img/product/printed-summer-dress4.jpg',
+            price: 28.00
+        },
+        {
+            id: 'SP06',
+            name: 'Printed Summer Dress',
+            image: 'img/product/printed-summer-dress.jpg',
+            price: 30.00
+        },
+        {
+            id: 'SP07',
+            name: 'Printed Chiffon Dress',
+            image: 'img/product/printed-chiffon-dress1.jpg',
+            price: 16.40
+        },
+        {
+            id: 'SP08',
+            name: 'Printed Chiffon Dress',
+            image: 'img/product/printed-chiffon-dress4.jpg',
+            price: 16.40
+        },
+        {
+            id: 'SP09',
+            name: 'Printed Chiffon Dress',
+            image: 'img/product/printed-chiffon-dress8.jpg',
+            price: 16.40
+        },
+        {
+            id: 'SP10',
+            name: 'Printed Chiffon Dress',
+            image: 'img/product/printed-chiffon-dress5.jpg',
+            price: 306.40
+        },
+    ]
+
+    const prevText = '<i class="icon-left-open"><i class="fa fa-angle-left"></i></i>';
+    const nextText = '<i class="icon-right-open"><i class="fa fa-angle-right"></i></i>';
+
     const featureItemOptions = {
         items : 5,
         nav: true,
-        navText : ['<i class="icon-left-open"><i class="fa fa-angle-left"></i></i>','<i class="icon-right-open"><i class="fa fa-angle-right"></i></i>'] 
+        navText : [prevText,nextText] 
     }
-
-    const handleAddToCart = (evt) => {
-        console.log(evt);
-        evt.preventDefault();
+    const cameraSlideOptions = {
+        items : 2,
+        dots: false,
+        nav: true,
+        navText : [prevText,nextText]  
     }
-
+    const brandSlideOptions = {
+        items : 6,
+        dots: false,
+        nav: true,
+        navText : [prevText,nextText]  
+    }
+    const slideProductOptions = {
+        items : 2,
+        loop: true,
+        nav: true,
+        navText : [prevText,nextText]  
+    }
     return (
         <>
+            <Slider />
+            {/* Start categori area */}
+            <div className="categori-area">
+                <div className="container">
+                    <div className="row">
+                        {/* Start categori menu */}
+                        <div className="col-xs-12 col-sm-4 col-md-3">
+                            <div className="categori-menu">
+                                <div className="sidebar-menu-title">
+                                    <h2>
+                                        <i className="fa fa-th-list" />
+                                        Categories
+                                    </h2>
+                                </div>
+                                <div className="sidebar-menu">
+                                    <ul>
+                                        <li>
+                                            <a href="shop-grid.html">Automotive &amp; Motorcycle</a>
+                                            <div className="megamenudown-sub">
+                                                <div className="mega-top">
+                                                    <div className="mega-item-menu">
+                                                        <a href="shop-grid.html" className="title">
+                                                            <span>electronic</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Camera &amp; Camcorders</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Electronic</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Cosmetic</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Medical &amp; Healthcare</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Laptop &amp; Computer</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Phasellus laoreet</span>
+                                                        </a>
+                                                    </div>
+                                                    <div className="mega-item-menu">
+                                                        <a href="shop-grid.html" className="title">
+                                                            <span>electronic</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Camera &amp; Camcorders</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Electronic</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Cosmetic</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Medical &amp; Healthcare</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Laptop &amp; Computer</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Phasellus laoreet</span>
+                                                        </a>
+                                                    </div>
+                                                    <div className="mega-item-menu">
+                                                        <a href="shop-grid.html" className="title">
+                                                            <span>laptop</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Phasellus laoreet</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Medical &amp; Healthcare</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Electronic</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Cosmetic</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#">Electronics</a>
+                                            <div className="megamenudown-sub">
+                                                <div className="mega-top">
+                                                    <div className="mega-item-menu">
+                                                        <a href="shop-grid.html" className="title">
+                                                            <span>camera &amp; camcorder</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Medical &amp; Healthcare</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Laptop &amp; Computer</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Camera</span>
+                                                        </a>
+                                                    </div>
+                                                    <div className="mega-item-menu">
+                                                        <a href="shop-grid.html" className="title">
+                                                            <span>Medical</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Camera</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Camcorders</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Camera &amp; Camcorders</span>
+                                                        </a>
+                                                    </div>
+                                                    <div className="mega-item-menu">
+                                                        <a href="shop-grid.html" className="title">
+                                                            <span>Healthcare</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Medical</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Healthcare</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Medical &amp; Healthcare</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="shop-grid.html">Sports &amp; Outdoors</a>
+                                            <div className="megamenudown-sub">
+                                                <div className="mega-top">
+                                                    <div className="mega-item-menu">
+                                                        <a href="shop-grid.html" className="title">
+                                                            <span>category 1</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>day</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>evening</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>night</span>
+                                                        </a>
+                                                    </div>
+                                                    <div className="mega-item-menu">
+                                                        <a href="shop-grid.html" className="title">
+                                                            <span>category 2</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>kids</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>men</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Women</span>
+                                                        </a>
+                                                    </div>
+                                                    <div className="mega-item-menu">
+                                                        <a href="shop-grid.html" className="title">
+                                                            <span>category 3</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>clothing</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>Accessories</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="shop-grid.html">Smartphone &amp; Tablets</a>
+                                            <div className="megamenudown-sub mini">
+                                                <div className="mega-top">
+                                                    <div className="mega-item-menu">
+                                                        <a href="shop-grid.html">
+                                                            <span>category 1</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>category 2</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>category 3</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="shop-grid.html">Health &amp; Beauty</a>
+                                            <div className="megamenudown-sub mini">
+                                                <div className="mega-top">
+                                                    <div className="mega-item-menu">
+                                                        <a href="shop-grid.html">
+                                                            <span>category 1</span>
+                                                        </a>
+                                                        <a href="shop-grid.html">
+                                                            <span>category 2</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="shop-grid.html" className="single-menu">
+                                                Bags, Shoes &amp; Accessories
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop-grid.html" className="single-menu">
+                                                Computers &amp; Networking
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop-grid.html" className="single-menu">
+                                                Laptops &amp; Accessories
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="shop-grid.html" className="single-menu">
+                                                Entertainment
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {/* End categori menu */}
+                        {/* Start categori banner */}
+                        <div className="col-xs-12 col-sm-8 col-md-6">
+                            <div className="categori-banner">
+                                <div className="banner-left">
+                                    <div className="banner-image">
+                                        <a href="#">
+                                            <img src="img/banner/cms11.jpg" alt="" />
+                                        </a>
+                                    </div>
+                                    <div className="banner-image">
+                                        <a href="#">
+                                            <img src="img/banner/cms12.jpg" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className="banner-right">
+                                    <div className="banner-image">
+                                        <a href="#">
+                                            <img src="img/banner/cms13.jpg" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* End categori banner */}
+                        {/* Start categori slide product */}
+                        <div className="col-xs-12 col-sm-12 col-md-3">
+                            <div className="categori-slide-product">
+                                <div className="slide-product-title">
+                                    <h3>sale off</h3>
+                                </div>
+                                <OwlCarousel className="slide-product" {...slideProductOptions}>
+                                    {/* Start slide product item */}
+                                    <div className="slide-product-item">
+                                        <div className="item3">
+                                            <div className="product-image">
+                                                <a href="single-product.html">
+                                                    <img
+                                                        src="img/product-mini/printed-summer-dress1.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <span className="price-percent-reduction">-5%</span>
+                                            </div>
+                                            <div className="product-info">
+                                                <a href="single-product.html">Printed Summer Dress</a>
+                                            </div>
+                                        </div>
+                                        <div className="item3">
+                                            <div className="product-image">
+                                                <a href="single-product.html">
+                                                    <img
+                                                        src="img/product-mini/printed-chiffon-dress3.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <span className="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div className="product-info">
+                                                <a href="single-product.html">printed chiffon dress</a>
+                                            </div>
+                                        </div>
+                                        <div className="item3">
+                                            <div className="product-image">
+                                                <a href="single-product.html">
+                                                    <img
+                                                        src="img/product-mini/printed-chiffon-dress5.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <span className="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div className="product-info">
+                                                <a href="single-product.html">Printed Summer Dress</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* End slide product item */}
+                                    {/* Start slide product item */}
+                                    <div className="slide-product-item">
+                                        <div className="item3">
+                                            <div className="product-image">
+                                                <a href="single-product.html">
+                                                    <img
+                                                        src="img/product-mini/printed-chiffon-dress2.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <span className="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div className="product-info">
+                                                <a href="single-product.html">Printed Summer Dress</a>
+                                            </div>
+                                        </div>
+                                        <div className="item3">
+                                            <div className="product-image">
+                                                <a href="single-product.html">
+                                                    <img
+                                                        src="img/product-mini/printed-chiffon-dress4.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <span className="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div className="product-info">
+                                                <a href="single-product.html">Printed Summer Dress</a>
+                                            </div>
+                                        </div>
+                                        <div className="item3">
+                                            <div className="product-image">
+                                                <a href="single-product.html">
+                                                    <img
+                                                        src="img/product-mini/printed-chiffon-dress6.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <span className="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div className="product-info">
+                                                <a href="single-product.html">Printed Summer Dress</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* End slide product item */}
+                                    {/* Start slide product item */}
+                                    <div className="slide-product-item">
+                                        <div className="item3">
+                                            <div className="product-image">
+                                                <a href="single-product.html">
+                                                    <img
+                                                        src="img/product-mini/printed-chiffon-dress7.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <span className="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div className="product-info">
+                                                <a href="single-product.html">Printed Summer Dress</a>
+                                            </div>
+                                        </div>
+                                        <div className="item3">
+                                            <div className="product-image">
+                                                <a href="single-product.html">
+                                                    <img
+                                                        src="img/product-mini/printed-chiffon-dress11.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <span className="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div className="product-info">
+                                                <a href="single-product.html">Printed Summer Dress</a>
+                                            </div>
+                                        </div>
+                                        <div className="item3">
+                                            <div className="product-image">
+                                                <a href="single-product.html">
+                                                    <img
+                                                        src="img/product-mini/printed-chiffon-dress10.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <span className="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div className="product-info">
+                                                <a href="single-product.html">Printed Summer Dress</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* End slide product item */}
+                                    {/* Start slide product item */}
+                                    <div className="slide-product-item">
+                                        <div className="item3">
+                                            <div className="product-image">
+                                                <a href="single-product.html">
+                                                    <img
+                                                        src="img/product-mini/printed-chiffon-dress8.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <span className="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div className="product-info">
+                                                <a href="single-product.html">Printed Summer Dress</a>
+                                            </div>
+                                        </div>
+                                        <div className="item3">
+                                            <div className="product-image">
+                                                <a href="single-product.html">
+                                                    <img
+                                                        src="img/product-mini/printed-chiffon-dress4.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <span className="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div className="product-info">
+                                                <a href="single-product.html">Printed Summer Dress</a>
+                                            </div>
+                                        </div>
+                                        <div className="item3">
+                                            <div className="product-image">
+                                                <a href="single-product.html">
+                                                    <img
+                                                        src="img/product-mini/printed-chiffon-dress12.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <span className="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div className="product-info">
+                                                <a href="single-product.html">Printed Summer Dress</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* End slide product item */}
+                                </OwlCarousel>
+                            </div>
+                        </div>
+                        {/* End categori slide product */}
+                    </div>
+                </div>
+            </div>
+            {/* End categori area */}
             {/* Start purches progress */}
             <div className="purches-progress-area">
                 <div className="container">
@@ -66,638 +609,7 @@ export default function Home({ onAddCart }) {
                             </div>
                         </div>
                         <div className="featured-product">
-                            <OwlCarousel className='featured-item owl-theme' {...featureItemOptions}>
-                                {/* Start featured item */}
-                                <div className="col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img
-                                                    src="img/product/faded-short-sleeves-tshirt.jpg"
-                                                    alt=""
-                                                />
-                                            </a>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Faded Short Sleeves T-shirt</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$16.51</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" onClick={handleAddToCart} className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/blouse.jpg" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Blouse</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$27.00</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-dress1.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$26.00</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-dress2.jpg" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$50.00</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-summer-dress4.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Summer Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$28.00</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-summer-dress.jpg" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Summer Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$30.00</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dress1.jpg" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$16.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dress4.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$16.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dress8.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$16.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dress5.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$306.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dress3.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$26.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dresst.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$26.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dressac.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$120.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dress10.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$20.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dressw.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$30.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dress12.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$200.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dress13.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$200.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                            </OwlCarousel>
-                            {/* <div className="featured-item">
-                                
-                            </div> */}
+                            <OwlSlide items={products} options={featureItemOptions} className={'featured-item owl-theme'} classItem={'col-sm-3'} />
                         </div>
                     </div>
                 </div>
@@ -739,635 +651,7 @@ export default function Home({ onAddCart }) {
                             </div>
                         </div>
                         <div className="featured-product">
-                            <div className="featured-item">
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img
-                                                    src="img/product/faded-short-sleeves-tshirt.jpg"
-                                                    alt=""
-                                                />
-                                            </a>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Faded Short Sleeves T-shirt</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$16.51</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/blouse.jpg" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Blouse</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$27.00</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-dress1.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$26.00</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-dress2.jpg" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$50.00</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-summer-dress4.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Summer Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$28.00</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-summer-dress.jpg" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Summer Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$30.00</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dress1.jpg" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$16.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dress4.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$16.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dress8.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$16.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dress5.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$306.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dress3.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$26.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dresst.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$26.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dressac.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$120.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dress10.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$20.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dressw.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$30.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dress12.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$200.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                                {/* Start featured item */}
-                                <div className="col-xs-12 col-sm-3">
-                                    <div className="featured-inner">
-                                        <div className="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="img/product/printed-chiffon-dress13.jpg" alt="" />
-                                            </a>
-                                            <span className="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div className="featured-info">
-                                            <a href="single-product.html">Printed Chiffon Dress</a>
-                                            <p className="reating">
-                                                <span className="rate">
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                    <i className="fa fa-star" />
-                                                </span>
-                                            </p>
-                                            <span className="price">$200.40</span>
-                                            <div className="featured-button">
-                                                <a href="wishlists.html" className="wishlist">
-                                                    <i className="fa fa-heart" />
-                                                </a>
-                                                <a href="#" className="fetu-comment">
-                                                    <i className="fa fa-signal" />
-                                                </a>
-                                                <a href="cart.html" className="add-to-card">
-                                                    <i className="fa fa-shopping-cart" />
-                                                    Add to cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* End featured item */}
-                            </div>
+                            <OwlSlide items={products} options={featureItemOptions} className={'featured-item owl-theme'} classItem={'col-xs-12 col-sm-3'} />
                         </div>
                     </div>
                 </div>
@@ -1393,160 +677,7 @@ export default function Home({ onAddCart }) {
                                     </a>
                                 </p>
                                 <div className="row">
-                                    <div className="camera-slide featured-product-area">
-                                        {/* Start featured item */}
-                                        <div className="featured-inner">
-                                            <div className="featured-image">
-                                                <a href="single-product.html">
-                                                    <img
-                                                        src="img/product/printed-chiffon-dress10.jpg"
-                                                        alt=""
-                                                    />
-                                                </a>
-                                                <span className="price-percent-reduction">-20%</span>
-                                            </div>
-                                            <div className="featured-info">
-                                                <a href="single-product.html">Printed Chiffon Dress</a>
-                                                <p className="reating">
-                                                    <span className="rate">
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                    </span>
-                                                </p>
-                                                <span className="price">$20.40</span>
-                                                <div className="featured-button">
-                                                    <a href="wishlists.html" className="wishlist">
-                                                        <i className="fa fa-heart" />
-                                                    </a>
-                                                    <a href="#" className="fetu-comment">
-                                                        <i className="fa fa-signal" />
-                                                    </a>
-                                                    <a href="cart.html" className="add-to-card">
-                                                        <i className="fa fa-shopping-cart" />
-                                                        Add to cart
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="featured-inner">
-                                            <div className="featured-image">
-                                                <a href="single-product.html">
-                                                    <img
-                                                        src="img/product/printed-chiffon-dressw.jpg"
-                                                        alt=""
-                                                    />
-                                                </a>
-                                                <span className="price-percent-reduction">-20%</span>
-                                            </div>
-                                            <div className="featured-info">
-                                                <a href="single-product.html">Printed Chiffon Dress</a>
-                                                <p className="reating">
-                                                    <span className="rate">
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                    </span>
-                                                </p>
-                                                <span className="price">$30.40</span>
-                                                <div className="featured-button">
-                                                    <a href="wishlists.html" className="wishlist">
-                                                        <i className="fa fa-heart" />
-                                                    </a>
-                                                    <a href="#" className="fetu-comment">
-                                                        <i className="fa fa-signal" />
-                                                    </a>
-                                                    <a href="cart.html" className="add-to-card">
-                                                        <i className="fa fa-shopping-cart" />
-                                                        Add to cart
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="featured-inner">
-                                            <div className="featured-image">
-                                                <a href="single-product.html">
-                                                    <img
-                                                        src="img/product/printed-chiffon-dress12.jpg"
-                                                        alt=""
-                                                    />
-                                                </a>
-                                                <span className="price-percent-reduction">-20%</span>
-                                            </div>
-                                            <div className="featured-info">
-                                                <a href="single-product.html">Printed Chiffon Dress</a>
-                                                <p className="reating">
-                                                    <span className="rate">
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                    </span>
-                                                </p>
-                                                <span className="price">$200.40</span>
-                                                <div className="featured-button">
-                                                    <a href="wishlists.html" className="wishlist">
-                                                        <i className="fa fa-heart" />
-                                                    </a>
-                                                    <a href="#" className="fetu-comment">
-                                                        <i className="fa fa-signal" />
-                                                    </a>
-                                                    <a href="cart.html" className="add-to-card">
-                                                        <i className="fa fa-shopping-cart" />
-                                                        Add to cart
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="featured-inner">
-                                            <div className="featured-image">
-                                                <a href="single-product.html">
-                                                    <img
-                                                        src="img/product/printed-chiffon-dress13.jpg"
-                                                        alt=""
-                                                    />
-                                                </a>
-                                                <span className="price-percent-reduction">-20%</span>
-                                            </div>
-                                            <div className="featured-info">
-                                                <a href="single-product.html">Printed Chiffon Dress</a>
-                                                <p className="reating">
-                                                    <span className="rate">
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                    </span>
-                                                </p>
-                                                <span className="price">$200.40</span>
-                                                <div className="featured-button">
-                                                    <a href="wishlists.html" className="wishlist">
-                                                        <i className="fa fa-heart" />
-                                                    </a>
-                                                    <a href="#" className="fetu-comment">
-                                                        <i className="fa fa-signal" />
-                                                    </a>
-                                                    <a href="cart.html" className="add-to-card">
-                                                        <i className="fa fa-shopping-cart" />
-                                                        Add to cart
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                    </div>
+                                    <OwlSlide items={products} options={cameraSlideOptions} className={'camera-slide featured-product-area owl-theme'} classItem={''} />
                                 </div>
                             </div>
                         </div>
@@ -1566,160 +697,7 @@ export default function Home({ onAddCart }) {
                                     </a>
                                 </p>
                                 <div className="row">
-                                    <div className="camera-slide featured-product-area">
-                                        {/* Start featured item */}
-                                        <div className="featured-inner">
-                                            <div className="featured-image">
-                                                <a href="single-product.html">
-                                                    <img
-                                                        src="img/product/printed-chiffon-dress12.jpg"
-                                                        alt=""
-                                                    />
-                                                </a>
-                                                <span className="price-percent-reduction">-20%</span>
-                                            </div>
-                                            <div className="featured-info">
-                                                <a href="single-product.html">Printed Chiffon Dress</a>
-                                                <p className="reating">
-                                                    <span className="rate">
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                    </span>
-                                                </p>
-                                                <span className="price">$200.40</span>
-                                                <div className="featured-button">
-                                                    <a href="wishlists.html" className="wishlist">
-                                                        <i className="fa fa-heart" />
-                                                    </a>
-                                                    <a href="#" className="fetu-comment">
-                                                        <i className="fa fa-signal" />
-                                                    </a>
-                                                    <a href="cart.html" className="add-to-card">
-                                                        <i className="fa fa-shopping-cart" />
-                                                        Add to cart
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="featured-inner">
-                                            <div className="featured-image">
-                                                <a href="single-product.html">
-                                                    <img
-                                                        src="img/product/printed-chiffon-dress13.jpg"
-                                                        alt=""
-                                                    />
-                                                </a>
-                                                <span className="price-percent-reduction">-20%</span>
-                                            </div>
-                                            <div className="featured-info">
-                                                <a href="single-product.html">Printed Chiffon Dress</a>
-                                                <p className="reating">
-                                                    <span className="rate">
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                    </span>
-                                                </p>
-                                                <span className="price">$200.40</span>
-                                                <div className="featured-button">
-                                                    <a href="wishlists.html" className="wishlist">
-                                                        <i className="fa fa-heart" />
-                                                    </a>
-                                                    <a href="#" className="fetu-comment">
-                                                        <i className="fa fa-signal" />
-                                                    </a>
-                                                    <a href="cart.html" className="add-to-card">
-                                                        <i className="fa fa-shopping-cart" />
-                                                        Add to cart
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="featured-inner">
-                                            <div className="featured-image">
-                                                <a href="single-product.html">
-                                                    <img
-                                                        src="img/product/printed-chiffon-dress10.jpg"
-                                                        alt=""
-                                                    />
-                                                </a>
-                                                <span className="price-percent-reduction">-20%</span>
-                                            </div>
-                                            <div className="featured-info">
-                                                <a href="single-product.html">Printed Chiffon Dress</a>
-                                                <p className="reating">
-                                                    <span className="rate">
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                    </span>
-                                                </p>
-                                                <span className="price">$20.40</span>
-                                                <div className="featured-button">
-                                                    <a href="wishlists.html" className="wishlist">
-                                                        <i className="fa fa-heart" />
-                                                    </a>
-                                                    <a href="#" className="fetu-comment">
-                                                        <i className="fa fa-signal" />
-                                                    </a>
-                                                    <a href="cart.html" className="add-to-card">
-                                                        <i className="fa fa-shopping-cart" />
-                                                        Add to cart
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="featured-inner">
-                                            <div className="featured-image">
-                                                <a href="single-product.html">
-                                                    <img
-                                                        src="img/product/printed-chiffon-dressw.jpg"
-                                                        alt=""
-                                                    />
-                                                </a>
-                                                <span className="price-percent-reduction">-20%</span>
-                                            </div>
-                                            <div className="featured-info">
-                                                <a href="single-product.html">Printed Chiffon Dress</a>
-                                                <p className="reating">
-                                                    <span className="rate">
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                        <i className="fa fa-star" />
-                                                    </span>
-                                                </p>
-                                                <span className="price">$30.40</span>
-                                                <div className="featured-button">
-                                                    <a href="wishlists.html" className="wishlist">
-                                                        <i className="fa fa-heart" />
-                                                    </a>
-                                                    <a href="#" className="fetu-comment">
-                                                        <i className="fa fa-signal" />
-                                                    </a>
-                                                    <a href="cart.html" className="add-to-card">
-                                                        <i className="fa fa-shopping-cart" />
-                                                        Add to cart
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                    </div>
+                                    <OwlSlide items={products} options={cameraSlideOptions} className={'camera-slide featured-product-area owl-theme'} classItem={''} />
                                 </div>
                             </div>
                         </div>
@@ -1778,4046 +756,32 @@ export default function Home({ onAddCart }) {
                             <div id="my-tab-content" className="tab-content row">
                                 {/* Start popular tab product */}
                                 <div className="tab-pane active" id="tab1">
-                                    <div className="popular-tab-product featured-product-area">
-                                        {/* Start featured item */}
-                                        <div className="col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/faded-short-sleeves-tshirt.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">
-                                                        Faded Short Sleeves T-shirt
-                                                    </a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.51</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/blouse.jpg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Blouse</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$27.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/printed-dress1.jpg" alt="" />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/printed-dress2.jpg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$50.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-summer-dress4.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Summer Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$28.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-summer-dress.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Summer Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$30.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress1.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress4.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress8.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress5.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$306.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress3.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dresst.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dressac.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$120.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress10.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$20.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dressw.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$30.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress12.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$200.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress13.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$200.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                    </div>
+                                    <OwlSlide items={products} options={featureItemOptions} className={'popular-tab-product featured-product-area owl-theme'} classItem={'col-sm-3'} />
                                 </div>
                                 {/* End popular tab product */}
                                 {/* Start popular tab product */}
                                 <div className="tab-pane" id="tab2">
-                                    <div className="popular-tab-product featured-product-area">
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-summer-dress4.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Summer Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$28.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress3.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dresst.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dressac.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$120.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress10.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$20.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dressw.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$30.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-summer-dress.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Summer Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$30.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress1.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress4.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress8.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress5.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$306.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/faded-short-sleeves-tshirt.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">
-                                                        Faded Short Sleeves T-shirt
-                                                    </a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.51</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/blouse.jpg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Blouse</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$27.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/printed-dress1.jpg" alt="" />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/printed-dress2.jpg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$50.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress12.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$200.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress13.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$200.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                    </div>
+                                    <OwlSlide items={products} options={featureItemOptions} className={'popular-tab-product featured-product-area owl-theme'} classItem={'col-sm-3'} />
                                 </div>
                                 {/* End popular tab product */}
                                 {/* Start popular tab product */}
                                 <div className="tab-pane" id="tab3">
-                                    <div className="popular-tab-product featured-product-area">
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress4.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress8.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress5.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$306.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress3.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dresst.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/faded-short-sleeves-tshirt.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">
-                                                        Faded Short Sleeves T-shirt
-                                                    </a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.51</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/blouse.jpg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Blouse</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$27.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/printed-dress1.jpg" alt="" />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/printed-dress2.jpg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$50.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-summer-dress4.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Summer Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$28.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-summer-dress.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Summer Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$30.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress1.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dressac.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$120.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress10.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$20.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dressw.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$30.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress12.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$200.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress13.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$200.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                    </div>
+                                    <OwlSlide items={products} options={featureItemOptions} className={'popular-tab-product featured-product-area owl-theme'} classItem={'col-sm-3'} />
                                 </div>
                                 {/* End popular tab product */}
                                 {/* Start popular tab product */}
                                 <div className="tab-pane" id="tab4">
-                                    <div className="popular-tab-product featured-product-area">
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/printed-dress1.jpg" alt="" />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/printed-dress2.jpg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$50.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-summer-dress4.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Summer Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$28.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-summer-dress.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Summer Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$30.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/faded-short-sleeves-tshirt.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">
-                                                        Faded Short Sleeves T-shirt
-                                                    </a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.51</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/blouse.jpg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Blouse</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$27.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress1.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress4.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress8.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress5.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$306.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress3.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dresst.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dressac.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$120.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress10.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$20.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dressw.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$30.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress12.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$200.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress13.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$200.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                    </div>
+                                    <OwlSlide items={products} options={featureItemOptions} className={'popular-tab-product featured-product-area owl-theme'} classItem={'col-sm-3'} />
                                 </div>
                                 {/* End popular tab product */}
                                 {/* Start popular tab product */}
                                 <div className="tab-pane" id="tab5">
-                                    <div className="popular-tab-product featured-product-area">
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress8.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress5.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$306.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress3.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dresst.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dressac.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$120.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/faded-short-sleeves-tshirt.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">
-                                                        Faded Short Sleeves T-shirt
-                                                    </a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.51</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/blouse.jpg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Blouse</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$27.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/printed-dress1.jpg" alt="" />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/printed-dress2.jpg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$50.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-summer-dress4.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Summer Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$28.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-summer-dress.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Summer Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$30.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress1.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress4.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress10.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$20.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dressw.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$30.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress12.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$200.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress13.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$200.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                    </div>
+                                    <OwlSlide items={products} options={featureItemOptions} className={'popular-tab-product featured-product-area owl-theme'} classItem={'col-sm-3'} />
                                 </div>
                                 {/* End popular tab product */}
                                 {/* Start popular tab product */}
                                 <div className="tab-pane" id="tab6">
-                                    <div className="popular-tab-product featured-product-area">
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/printed-dress2.jpg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$50.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-summer-dress4.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Summer Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$28.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-summer-dress.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Summer Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$30.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress1.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress4.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/faded-short-sleeves-tshirt.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">
-                                                        Faded Short Sleeves T-shirt
-                                                    </a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.51</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/blouse.jpg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Blouse</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$27.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/printed-dress1.jpg" alt="" />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.00</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress8.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$16.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress5.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$306.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress3.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dresst.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$26.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dressac.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$120.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress10.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$20.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dressw.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$30.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress12.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$200.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                        {/* Start featured item */}
-                                        <div className="col-xs-12 col-sm-3">
-                                            <div className="featured-inner">
-                                                <div className="featured-image">
-                                                    <a href="single-product.html">
-                                                        <img
-                                                            src="img/product/printed-chiffon-dress13.jpg"
-                                                            alt=""
-                                                        />
-                                                    </a>
-                                                    <span className="price-percent-reduction">-20%</span>
-                                                </div>
-                                                <div className="featured-info">
-                                                    <a href="single-product.html">Printed Chiffon Dress</a>
-                                                    <p className="reating">
-                                                        <span className="rate">
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                            <i className="fa fa-star" />
-                                                        </span>
-                                                    </p>
-                                                    <span className="price">$200.40</span>
-                                                    <div className="featured-button">
-                                                        <a href="wishlists.html" className="wishlist">
-                                                            <i className="fa fa-heart" />
-                                                        </a>
-                                                        <a href="#" className="fetu-comment">
-                                                            <i className="fa fa-signal" />
-                                                        </a>
-                                                        <a href="cart.html" className="add-to-card">
-                                                            <i className="fa fa-shopping-cart" />
-                                                            Add to cart
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {/* End featured item */}
-                                    </div>
+                                    <OwlSlide items={products} options={featureItemOptions} className={'popular-tab-product featured-product-area owl-theme'} classItem={'col-sm-3'} />
                                 </div>
                                 {/* End popular tab product */}
                             </div>
