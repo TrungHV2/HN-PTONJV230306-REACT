@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../actions';
 
-export default function ProductItem() {
+export default function ProductItem({product}) {
     const dispatch = useDispatch();
 
     const buyClick = () => {
@@ -17,11 +17,11 @@ export default function ProductItem() {
             <div className="featured-inner">
                 <div className="featured-image">
                     <a href="single-product.html">
-                        <img src="img/product/faded-short-sleeves-tshirt.jpg" alt="" />
+                        <img src={product.image} alt="" />
                     </a>
                 </div>
                 <div className="featured-info">
-                    <a href="single-product.html">Faded Short Sleeves T-shirt</a>
+                    <a href="single-product.html">{product.name}</a>
                     <p className="reating">
                         <span className="rate">
                             <i className="fa fa-star" />
@@ -31,7 +31,7 @@ export default function ProductItem() {
                             <i className="fa fa-star" />
                         </span>
                     </p>
-                    <span className="price">$16.51</span>
+                    <span className="price">${product.price}</span>
                     <div className="featured-button">
                         <a href="wishlists.html" className="wishlist">
                             <i className="fa fa-heart" />

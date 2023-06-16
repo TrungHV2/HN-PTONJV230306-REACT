@@ -1,0 +1,58 @@
+{
+  "users": [],
+  "students": [
+    {
+      "id": "SV01",
+      "fullname": "Hoàng Văn Trung",
+      "gender": true,
+      "age": 28,
+      "email": "trunghv@gmail.com"
+    },
+    {
+      "id": "SV02",
+      "fullname": "Nguyễn Văn A",
+      "gender": false,
+      "age": 22,
+      "email": "anv@gmail.com"
+    },
+    {
+      "id": "SV03",
+      "fullname": "Update Student",
+      "gender": true,
+      "age": 25,
+      "email": "newstudent@gmail.com"
+    }
+  ],
+  "products": [
+    {
+      "id": "SP01",
+      "name": "Product name 1",
+      "price": 16.56,
+      "image": "img/product/faded-short-sleeves-tshirt.jpg"
+    },
+    {
+      "id": "SP02",
+      "name": "Product name 2",
+      "price": 16.56,
+      "image": "img/product/faded-short-sleeves-tshirt.jpg"
+    },
+    {
+      "id": "SP03",
+      "name": "Product name 3",
+      "price": 16.56,
+      "image": "img/product/faded-short-sleeves-tshirt.jpg"
+    },
+    {
+      "id": "SP04",
+      "name": "Product name 4",
+      "price": 16.56,
+      "image": "img/product/faded-short-sleeves-tshirt.jpg"
+    },
+    {
+      "id": "SP05",
+      "name": "Product name 5",
+      "price": 16.56,
+      "image": "img/product/faded-short-sleeves-tshirt.jpg"
+    }
+  ]
+}

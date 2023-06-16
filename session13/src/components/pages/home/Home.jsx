@@ -1,11 +1,29 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import NivoSlider from './NivoSlider';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import ProductItem from '../shared/ProductItem';
+import axios from 'axios';
+
+const http = axios.create({
+    baseURL: 'http://localhost:3100/'
+})
 
 export default function Home() {
+    const [isMount, setIsMount] = useState(false);
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        if(isMount) {
+            http.get('products')
+            .then(response => setProducts(response.data))
+            .catch(err => console.log(err));
+        } else {
+            setIsMount(true);
+        }
+    }, [isMount])
+
     const slideProductOptions = {
         items: 2,
         nav: true,
@@ -540,7 +558,10 @@ export default function Home() {
                         </div>
                         <div className="featured-product">
                             <OwlCarousel className='featured-item owl-theme' {...featuredItemOptions}>
-                                <div className="col-xs-12 col-sm-3">
+                                {products.map(p => <div key={p.id} className="col-xs-12 col-sm-3">
+                                    <ProductItem product={p} />
+                                </div>)}
+                                {/* <div className="col-xs-12 col-sm-3">
                                     <ProductItem />
                                 </div>
                                 <div className="col-xs-12 col-sm-3">
@@ -557,7 +578,7 @@ export default function Home() {
                                 </div>
                                 <div className="col-xs-12 col-sm-3">
                                     <ProductItem />
-                                </div>
+                                </div> */}
                             </OwlCarousel>
                         </div>
                     </div>
