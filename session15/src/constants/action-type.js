@@ -1,0 +1,3 @@
+export const ACT_GET_PRODUCT = "GET_PRODUCT";
+export const ACT_POST_PRODUCT = "POST_PRODUCT";
+export const ACT_FETCH_PRODUCT = "FETCH_PRODUCT";
