@@ -1,0 +1,9 @@
+export const GET_PRODUCT = "GET_PRODUCT";
+export const GET_PRODUCT_DONE = "GET_PRODUCT_DONE";
+
+export const GET_PRODUCT_DETAIL = "GET_PRODUCT_DETAIL";
+export const GET_PRODUCT_DETAIL_DONE = "GET_PRODUCT_DETAIL_DONE";
+
+export const CART_ADD = "CART_ADD";
+export const CART_UPDATE = "CART_UPDATE";
+export const CART_REMOVE = "CART_REMOVE";

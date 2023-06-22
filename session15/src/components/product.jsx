@@ -1,13 +1,21 @@
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../actions';
+import { useCallback, useEffect } from 'react';
 
 export default function Product() {
     const products = useSelector(state => state.products);
     const dispatch = useDispatch();
 
+    const handleLoad = useCallback(() => {
+        dispatch(actions.getProduct())
+    })
+
+    // useEffect(() => {
+    //     dispatch(actions.getProduct())
+    // }, [])
+
     return (
         <div>
-            <button onClick={e => dispatch(actions.getProduct())}>Load products</button>
             <table border={1} cellPadding={7} cellSpacing={0} width={'100%'}>
                 <thead>
                     <tr>
